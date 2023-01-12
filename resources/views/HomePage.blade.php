@@ -28,7 +28,7 @@
     </head>
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
-            <a href="/my-site/public"
+            <a href="/public"
                 ><img class="w-60 ml-6" src="images/logo.png" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
@@ -50,11 +50,11 @@
                 @else
 
                 <li>
-                    <a href="/my-site/public/register" class="hover:text-laravel"
+                    <a href="/register" class="hover:text-laravel"
                         ><i class="fa-solid fa-user-plus"></i> Register</a>
                 </li>
                 <li>
-                    <a href="/my-site/public/login" class="hover:text-laravel"
+                    <a href="/login" class="hover:text-laravel"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a>
                 </li>

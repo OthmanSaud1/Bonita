@@ -19,9 +19,7 @@ Route::get('/', function () {
     return view('HomePage');
 });
 
-// Route::get('/register', function () {
-//     return view("Register");
-// });
+
 
 // sign up
 Route::get('/register', [UsersController::class, "create"]);
