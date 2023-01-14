@@ -24,7 +24,7 @@ return new class extends Migration
             $table->boolean('is_dyed');
             $table->smallInteger('curlyness');
             $table->integer('some_other_column');
-
+            $table->boolean('test');
         });
     }
 
