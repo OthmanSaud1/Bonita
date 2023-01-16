@@ -32,13 +32,22 @@
                 ><img class="w-60 ml-6" src="images/logo.png" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
+                @if(!auth()->check()) {{-- this is to make the survey for a guest --}}
+                    <form class="inline" method="GET" action="survey">
+                        <button type="submit">
+                            <i class="fa-solid fa-sign-out"></i> Take Survey
+                        </button>
+                    </form>
+                @endif
+
+
                 @auth
                 <li>
                     <span class="font-bold uppercase">
                         Welcome {{auth()->user()->name}}
                     </span>
                 </li>
-                    @if(auth()->check() && $hairSurvey->isEmpty()) {{-- if you are logged in and haven't completed the survey: enter this if statement--}}
+                    @if($hairSurvey->isEmpty()) {{-- if you are logged in and haven't completed the survey: enter this if statement--}}
 
                         <form class="inline" method="GET" action="survey">
                             <button type="submit">
