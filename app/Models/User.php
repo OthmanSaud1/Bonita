@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function hair_survey() {
+        return $this->hasOne(HairSurvey::class, 'user_id');
+    }
+
 }

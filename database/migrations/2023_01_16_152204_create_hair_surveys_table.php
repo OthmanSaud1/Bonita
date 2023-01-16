@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hair_questions', function (Blueprint $table) {
+        Schema::create('hair_surveys', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->unique();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
@@ -25,7 +25,6 @@ return new class extends Migration
             $table->boolean('is_dyed');
             $table->smallInteger('curlyness');
             $table->integer('some_other_column');
-
         });
     }
 
@@ -36,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hair_questions');
+        Schema::dropIfExists('hair_surveys');
     }
 };

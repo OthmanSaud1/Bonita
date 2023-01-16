@@ -28,7 +28,7 @@
     </head>
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
-            <a href="/public"
+            <a href="/"
                 ><img class="w-60 ml-6" src="images/logo.png" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
@@ -38,6 +38,14 @@
                         Welcome {{auth()->user()->name}}
                     </span>
                 </li>
+                    @if(auth()->check() && $hairSurvey->isEmpty()) {{-- if you are logged in and haven't completed the survey: enter this if statement--}}
+
+                        <form class="inline" method="GET" action="survey">
+                            <button type="submit">
+                                <i class="fa-solid fa-sign-out"></i> Take Survey
+                            </button>
+                        </form>
+                    @endif
                 <li>
                     <form class="inline" method="POST" action="logout">
                         @csrf
@@ -63,6 +71,20 @@
         </nav>
 
 
+
+    <div>
+
+@foreach($products as $product)
+    <div style="width: 50%; margin-left: auto; margin-right: auto; border: 2px solid black;">
+        {{$product['id']}}
+        <br>
+        {{$product['product_name']}}
+
+    </div>
+    <p></p><br>
+@endforeach
+
+    </div>
 
         {{-- <footer
         class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center"

@@ -24,7 +24,7 @@ class UsersController extends Controller
         $user = User::create($formFields);
 
         auth() -> login($user);
-        return redirect("/") ->with("message", "user has been created");
+        return redirect("/survey") ->with("message", "user has been created");
     }
 
     public function logout(Request $req){
