@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\SurveyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
@@ -15,13 +17,9 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return view('HomePage');
-});
+Route::get('/', [HomePageController::class, 'showHomePage']);
 
-// Route::get('/register', function () {
-//     return view("Register");
-// });
+
 
 // sign up
 Route::get('/register', [UsersController::class, "create"]);
@@ -33,3 +31,5 @@ Route::post('/logout', [UsersController::class, "logout"]);
 // login
 Route::get('/login', [UsersController::class, "login"]);
 Route::post('users/login', [UsersController::class, 'loginUser']);
+
+Route::get('/survey', [SurveyController::class, "showSurveyPage"]);
