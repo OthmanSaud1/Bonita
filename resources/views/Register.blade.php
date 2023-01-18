@@ -52,8 +52,8 @@
             class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24"
         >
             <header class="text-center">
-                <h2 class="text-2xl font-bold uppercase mb-1">Register</h2>
-                <p class="mb-4">Create an account to post gigs</p>
+                <h2 class="text-2xl font-bold uppercase mb-1">Sign up</h2>
+                <p class="mb-4">create an account to find the right products for you</p>
             </header>
 
             <form method="POST" action="users">
@@ -105,7 +105,7 @@
 
                 <div class="mb-6">
                     <button type="submit" class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-                        Sign Up
+                        Register
                     </button>
                 </div>
 

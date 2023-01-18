@@ -33,11 +33,11 @@
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 @if(!auth()->check()) {{-- this is to make the survey for a guest --}}
-                    <form class="inline" method="GET" action="survey">
+                    {{-- <form class="inline" method="GET" action="survey">
                         <button type="submit">
                             <i class="fa-solid fa-sign-out"></i> Take Survey
                         </button>
-                    </form>
+                    </form> --}}
                 @endif
 
 

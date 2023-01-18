@@ -21,7 +21,7 @@ class HomePageController extends Controller
         */
         $hairSurvey = "";
         if(auth()->check()) { //if logged in
-            $hairSurvey = auth()->user()->hair_survey()->get();
+            $hairSurvey = auth()->user()->hair_surveys()->get();
         }
         if(auth()->check() && auth()->user()->role == 0) { //if logged in and is admin
             return view('AdminPage')->with(['products' => Product::all()]);

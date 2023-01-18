@@ -16,7 +16,9 @@ use App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function () {
+    return view('HomePage');
+});
 Route::get('/', [HomePageController::class, 'showHomePage']);
 
 
@@ -32,4 +34,6 @@ Route::post('/logout', [UsersController::class, "logout"]);
 Route::get('/login', [UsersController::class, "login"]);
 Route::post('users/login', [UsersController::class, 'loginUser']);
 
+
 Route::get('/survey', [SurveyController::class, "showSurveyPage"]);
+Route::post('/survey', [SurveyController::class, "submitSurvey"]);

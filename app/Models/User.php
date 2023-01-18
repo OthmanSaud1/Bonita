@@ -43,7 +43,7 @@ class User extends Authenticatable
     ];
 
 
-    public function hair_survey() {
+    public function hair_surveys() {
         return $this->hasOne(HairSurvey::class, 'user_id');
     }
 

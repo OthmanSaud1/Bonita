@@ -16,15 +16,16 @@ return new class extends Migration
         Schema::create('hair_surveys', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id')->unique();
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->boolean('is_dyed');
-            $table->smallInteger('curlyness');
-            $table->integer('some_other_column');
+            $table->enum('hair_type', ['Straight', 'Wavy', 'Curly','Coily']);
+            $table->enum('hair_Structure', ['Fine', 'Medium', 'Coarse']);
+            $table->enum('hair_Moisture', ['Dry', 'Balanced', 'Oily']);
+            $table->enum('hair_Thickness', ['Thin', 'Medium', 'Thick']);
+            $table->integer('age');
+
+            
+
 
         });
     }
