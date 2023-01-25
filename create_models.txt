@@ -1,0 +1,7 @@
+php artisan make:model ShampoosLinks  --all 
+php artisan make:model ConditionerLinks  --all 
+php artisan make:model LeaveInConditionerLinks --all 
+php artisan make:model HairMaskLinks --all 
+php artisan make:model GelLinks --all 
+php artisan make:model HairWashLinks --all 
+php artisan make:model HairVolumeLinks --all 
